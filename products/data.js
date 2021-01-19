@@ -2,7 +2,7 @@ export const fruits = [
     {
         id: 1,
         name: 'Kiwi',
-        image: 'assets/Kiwi-fruit.png',
+        image: 'Kiwi-fruit.png',
         flavor: `Kiwis are sweet, refreshing fruits with a nice tartness that complements their sweetness. The riper the fruit is, the sweeter and less tart it tends to be.`,
         color: `Brown skin with green flesh.`,
         price: 1.00,
