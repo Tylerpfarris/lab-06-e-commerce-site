@@ -1,0 +1,17 @@
+
+.fruit-image {
+    height: 100px;
+    width: auto;   
+}
+
+.fruit-list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+.fruit-item {
+    border: solid 1px black;
+    text-align: center; 
+}
