@@ -28,22 +28,22 @@ export function renderFruit(fruit) {
 
     const pColor = document.createElement('p');
     pColor.classList.add('color');
-    pColor.textContent = fruit.color;
+    pColor.textContent = fruit.name + ' has ' + fruit.color;
     li.append(pColor);
 
     const pPrice = document.createElement('p');
     pPrice.classList.add('price');
-    pPrice.textContent = '$' + fruit.price.toFixed(2);
+    pPrice.textContent = 'The price is ' + ' $' + fruit.price.toFixed(2) + ' per. lb';
     li.append(pPrice);
 
     const pGrownIn = document.createElement('p');
     pGrownIn.classList.add('grownIn');
-    pGrownIn.textContent = fruit.grownIn;
+    pGrownIn.textContent = fruit.name + ' is typically grown in ' + fruit.grownIn;
     li.append(pGrownIn);
 
     const buttonCart = document.createElement('button');
     buttonCart.id = '1';
-    buttonCart.textContent = 'Add to cart';
+    buttonCart.textContent = 'Add to cart 🛒';
     li.append(buttonCart);
 
 
