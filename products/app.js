@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import { renderFruit } from '../products/render-fruits.js';
-import { fruits } from '../products/data.js';
+import { fruits } from '../data.js';
 // initialize state
 
 const fruitList = document.getElementById('list');

@@ -17,9 +17,13 @@ h2 {
     align-content: space-around;
 }
 
-nav {
+ul {
 font-size: 30px;
 display: flex;
 justify-content: center;
 margin-top: 100px;
+}
+
+li {
+    margin: 10px 10px 10px 10px;
 }
