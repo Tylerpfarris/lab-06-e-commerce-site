@@ -5,7 +5,7 @@ import { renderTableRow } from '../cart/render-table-row.js';
 import { findById, calcOrderTotal } from '../utils.js';
 
 const table = document.querySelector('table');
-const orderButton = document.getElementById('place-order');
+// const orderButton = document.getElementById('place-order');
 
 for (let item of cart) {
     const fruit = findById(item.id, fruits);
@@ -20,9 +20,9 @@ const totalTr = document.createElement('tr');
 const td1 = document.createElement('td');
 const td2 = document.createElement('td');
 const td3 = document.createElement('td');
-td3.
+td3.classList.add('order-total');
 
-    td3.textContent = `$${calcOrderTotal(cart, fruits)}`;
+td3.textContent = `$${calcOrderTotal(cart, fruits)}`;
 
 totalTr.append(td1, td2, td3);
 // orderButton.addEventListener('click', () => {
