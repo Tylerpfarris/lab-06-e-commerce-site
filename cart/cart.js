@@ -20,8 +20,9 @@ const totalTr = document.createElement('tr');
 const td1 = document.createElement('td');
 const td2 = document.createElement('td');
 const td3 = document.createElement('td');
+td3.
 
-td3.textContent = `$${calcOrderTotal(cart, fruits)}`;
+    td3.textContent = `$${calcOrderTotal(cart, fruits)}`;
 
 totalTr.append(td1, td2, td3);
 // orderButton.addEventListener('click', () => {
