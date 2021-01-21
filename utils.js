@@ -13,7 +13,7 @@ export function calcLineItem(quantity, amount) {
     return total;
 }
 
-export function calcOrderItem(cart, fruits) {
+export function calcOrderTotal(cart, fruits) {
     let total = 0;
 
     for (const cartItem of cart) {

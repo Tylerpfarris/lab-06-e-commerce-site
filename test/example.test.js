@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { renderFruit } from '../products/render-fruits.js';
-import { findById, calcLineItem, calcOrderItem } from '../utils.js';
+import { findById, calcLineItem, calcOrderTotal } from '../utils.js';
 import { renderTableRow } from '../cart/render-table-row.js';
 import { fruits } from '../data.js';
 import { cart } from '../cart/cart-data.js';
@@ -226,7 +226,7 @@ test('takes in the the cart arr and fruit arr and returns the total cost', (expe
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = calcOrderItem(cart, fruits) ;
+    const actual = calcOrderTotal(cart, fruits) ;
 
     //Expect
     // Make assertions about what is expected versus the actual result

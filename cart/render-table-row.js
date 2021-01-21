@@ -1,8 +1,3 @@
-// import { findById } from '../utils.js';
-// import { fruits } from '../data.js';
-// import { calcLineItem } from '../utils.js';
-// import { cart } from './cart-data.js';
-
 
 export function renderTableRow(cartItem, fruit) {
     const quantity = cartItem.quantity;
@@ -17,25 +12,14 @@ export function renderTableRow(cartItem, fruit) {
 
     productTd.textContent = fruit.name;
     quantityTd.textContent = quantity;
-    priceTd.textContent = fruit.price.toFixed(2);
-    lineTotalTd.textContent = getFruitTotal(cartItem, fruit);
-    
-    // lineTotalTd.id = 'totalCostOfFruit';
-    // const grandTotal = document.getElementById('totalCostOfFruit');
-    // for (let cost of totalCost) {
-    //     grandTotal
-    // }
+    priceTd.textContent = `$` + fruit.price.toFixed(2);
+    lineTotalTd.textContent = `$` + getFruitTotal(cartItem, fruit);
 
     tr.append(productTd, quantityTd, priceTd, lineTotalTd);
-
-
-
-
 
     return tr;
 
 }
-
 
 export function getFruitTotal(cartItem, fruit) {
     return cartItem.quantity * fruit.price;
@@ -43,30 +27,6 @@ export function getFruitTotal(cartItem, fruit) {
 
 
 
-// export function renderTableRow(cartItem) {
-   
-//     const rowItem = findById(cartItem.id, fruits);
-//     const tr = document.createElement('tr');
-
-//     const nameTd = document.createElement('td');
-//     nameTd.textContent = fruits.name;
-//     tr.append(nameTd);
-
-//     const quantityTd = document.createElement('td');
-//     quantityTd.textContent = cart.quantity;
-//     tr.append(quantityTd);
-
-    
-
-//     const priceTd = document.createElement('td');
-//     priceTd.textContent = `$${calcLineItem(cartItem, rowItem)}`;
-
-    
-
-
-//     return tr;
-
-// }
 
 
 
