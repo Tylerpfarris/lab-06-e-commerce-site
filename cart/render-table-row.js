@@ -1,7 +1,7 @@
-import { findById } from '../utils.js';
-import { fruits } from '../data.js';
-import { calcLineItem } from '../utils.js';
-import { cart } from './cart-data.js';
+// import { findById } from '../utils.js';
+// import { fruits } from '../data.js';
+// import { calcLineItem } from '../utils.js';
+// import { cart } from './cart-data.js';
 
 
 export function renderTableRow(cartItem, fruit) {
@@ -11,8 +11,8 @@ export function renderTableRow(cartItem, fruit) {
     const productTd = document.createElement('td');
     const quantityTd = document.createElement('td');
     const priceTd = document.createElement('td');
-    const productImg = document.createElement('img');
-    const productImgTd = document.createElement('td');
+    // const productImg = document.createElement('img');
+    // const productImgTd = document.createElement('td');
 
     productTd.textContent = fruit.name;
     quantityTd.textContent = quantity;
@@ -30,7 +30,9 @@ export function renderTableRow(cartItem, fruit) {
 }
 
 
-
+export function getFruitTotal(cartItem, fruit) {
+    return cartItem.quantity * fruit.price;
+}
 
 
 
@@ -59,7 +61,5 @@ export function renderTableRow(cartItem, fruit) {
 
 // }
 
-// export function getFruitTotal(cartItem, fruit) {
-//     return cartItem.quantity * fruit.price;
-// }
+
 
