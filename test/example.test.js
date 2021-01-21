@@ -1,8 +1,9 @@
 // IMPORT MODULES under test here:
 import { renderFruit } from '../products/render-fruits.js';
-import { findById, calcLineItem } from '../utils.js';
+import { findById, calcLineItem, calcOrderItem } from '../utils.js';
 import { renderTableRow } from '../cart/render-table-row.js';
 import { fruits } from '../data.js';
+import { cart } from '../cart/cart-data.js';
 const test = QUnit.test;
 
 test('should take in a fruit and return a li', (expect) => {
@@ -176,13 +177,13 @@ test('takes in a TR and replicates it', (expect) => {
         {
             name: `Passion Fruit`,
             quantity: 4,
-            price: 32.00  
-   
+            price: 32.00,
+            total: 128  
         }; 
       
     
 
-    const expected = `<tr><td>Passion Fruit</td><td>4</td><td>32.00</td></tr>`;
+    const expected = `<tr><td>Passion Fruit</td><td>4</td><td>32.00</td><td>128</td></tr>`;
     
     
     //Act 
@@ -207,6 +208,25 @@ test('should take in the quantity and amount of an item and return a total', (ex
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = calcLineItem(20, 8.00);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+});
+
+test('takes in the the cart arr and fruit arr and returns the total cost', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const total = 680.5;
+      
+    
+
+    const expected = 680.5;
+    
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcOrderItem(cart, fruits) ;
 
     //Expect
     // Make assertions about what is expected versus the actual result

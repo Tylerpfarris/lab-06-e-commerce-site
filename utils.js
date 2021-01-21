@@ -10,6 +10,17 @@ export function findById(id, array) {
 
 export function calcLineItem(quantity, amount) {
     const total = quantity * amount;
-    return total.toFixed(2);
+    return total;
 }
 
+export function calcOrderItem(cart, fruits) {
+    let total = 0;
+
+    for (const cartItem of cart) {
+        let fruitPrice = findById(cartItem.id, fruits).price;
+        let cartItemPrice = calcLineItem(cartItem.quantity, fruitPrice);
+        total += cartItemPrice;
+    }
+    return total;
+
+}
