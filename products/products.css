@@ -1,0 +1,45 @@
+
+body {
+    background-color: hsla(64, 75%, 89%, 0.979);
+
+}
+li > img {
+    height: 100px;
+    width: auto;   
+}
+
+h2 {
+    font-size: 66px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 20px;
+    color: hsla(263, 86%, 50%, 0.76);
+    letter-spacing: 20px;
+    text-shadow: 5px 5px hsla(133, 82%, 74%, 0.5);
+}
+
+.fruit-list {
+    background-color: hsl(0, 0%, 100%);
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      
+   }
+
+.fruitItem {
+    border: solid 5px hsla(133, 82%, 74%, 0.5);
+    text-align: center; 
+    padding: 20px;
+    margin: 10px;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}
+
+button {
+font-size: 13px;
+}
+
+h3 {
+    font-size: 30px;
+    padding-bottom: 10px;
+}

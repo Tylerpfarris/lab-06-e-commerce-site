@@ -1,0 +1,29 @@
+body {
+    background-image: url(../assets/pictures/tropical-fruits.png)
+}
+
+.home-div {
+    background-color: hsla(64, 75%, 89%, 0.979);
+    height: 40em;
+    width: 100%;
+    flex: auto;
+    
+}
+
+h2 {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+
+ul {
+font-size: 30px;
+display: flex;
+justify-content: center;
+margin-top: 100px;
+}
+
+li {
+    margin: 10px 10px 10px 10px;
+}
