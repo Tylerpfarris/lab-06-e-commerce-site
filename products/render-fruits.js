@@ -60,7 +60,7 @@ export function renderFruit(fruit) {
         removeFromCart(fruit.id);
         if (quantityBox.textContent === '0'){ 
             buttonSubtractFromCart.disabled = true;
-        } else { quantityBox.textContent--;
+        } else { --quantityBox.textContent;
         }
     });
         

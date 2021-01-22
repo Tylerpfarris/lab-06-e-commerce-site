@@ -20,7 +20,7 @@ test('should take in a fruit and return a li', (expect) => {
         grownIn:`China, Italy and New Zealand`,
     };
 
-    const expected = `<li class=\"fruitItem\"><h3 class=\"name\">Kiwi</h3><img class=\"image\" src=\"../assets/pictures/Kiwi-fruit.png\"><p class=\"flavor\">Kiwis are sweet, refreshing fruits with a nice tartness that complements their sweetness. The riper the fruit is, the sweeter and less tart it tends to be.</p><p class=\"color\">Kiwi has Brown skin with green flesh.</p><p class=\"price\">The price is  $1.00 per. lb</p><p class=\"grownIn\">Kiwi is typically grown in China, Italy and New Zealand</p><input><button class=\"toCart-button\" id=\"1\">🛒</button><button class=\"toCart-button\" id=\"1\" disabled=\"\">🗑️</button></li>`;
+    const expected = `<li class=\"fruitItem\"><h3 class=\"name\">Kiwi</h3><img class=\"image\" src=\"../assets/pictures/Kiwi-fruit.png\"><p class=\"flavor\">Kiwis are sweet, refreshing fruits with a nice tartness that complements their sweetness. The riper the fruit is, the sweeter and less tart it tends to be.</p><p class=\"color\">Kiwi has Brown skin with green flesh.</p><p class=\"price\">The price is  $1.00 per. lb</p><p class=\"grownIn\">Kiwi is typically grown in China, Italy and New Zealand</p><label></label><button class=\"toCart-button\" id=\"1\">🛒</button><button class=\"toCart-button\" id=\"1\" disabled=\"\">🗑️</button></li>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
