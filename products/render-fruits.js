@@ -1,13 +1,8 @@
+
+import { addToCart, removeFromCart } from '../cart/cart-utils.js';
 export function renderFruit(fruit) {
-
-// furits have:
-// name
-// Image
-// flavor
-// color
-// price
-// grown in
-
+    
+    
     const li = document.createElement('li');
     li.classList.add('fruitItem');
 
@@ -42,12 +37,37 @@ export function renderFruit(fruit) {
     li.append(pGrownIn);
 
     const buttonCart = document.createElement('button');
-    buttonCart.id = '1';
-    buttonCart.textContent = 'Add to cart 🛒';
+    buttonCart.classList.add('toCart-button');
+    buttonCart.id = 1;
+    buttonCart.textContent = '🛒';
+
+    const buttonSubtractFromCart = document.createElement('button');
+    buttonSubtractFromCart.classList.add('toCart-button');
+    buttonSubtractFromCart.id = 1;
+    buttonSubtractFromCart.textContent = '🗑️';
+
+    const quantityBox = document.createElement('label');
+    li.append(quantityBox);
+
+    buttonCart.addEventListener('click', () => {
+        addToCart(fruit.id);
+        localStorage.setItem('quantity', quantityBox.textContent++);
+        buttonSubtractFromCart.disabled = false;
+    });
+    
+    buttonSubtractFromCart.disabled = true;
+    buttonSubtractFromCart.addEventListener('click', () => {
+        removeFromCart(fruit.id);
+        if (quantityBox.textContent === '0'){ 
+            buttonSubtractFromCart.disabled = true;
+        } else { quantityBox.textContent--;
+        }
+    });
+        
     li.append(buttonCart);
-
-
- 
-
+    li.append(buttonSubtractFromCart);
     return li;
+  
+    
+    
 }
