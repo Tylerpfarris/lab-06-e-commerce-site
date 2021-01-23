@@ -10,15 +10,19 @@ export function renderTableRow(cartItem, fruit) {
     // const productImg = document.createElement('img');
     // const productImgTd = document.createElement('td');
 
+    quantityTd.classList.add('quantValue');
+
     productTd.textContent = fruit.name;
     quantityTd.textContent = quantity;
     priceTd.textContent = `$` + fruit.price.toFixed(2);
     lineTotalTd.textContent = `$` + getFruitTotal(cartItem, fruit);
 
     tr.append(productTd, quantityTd, priceTd, lineTotalTd);
-
-    return tr;
-
+    
+    if (quantityTd.textContent <= 0) {
+        return '';
+    } else 
+        return tr;  
 }
 
 export function getFruitTotal(cartItem, fruit) {

@@ -11,16 +11,15 @@ export function getCart() {
         //then return it
         return parsedCart;
     } else {
-        //initialize a cart
-        //if there is no cart then and stringify our default empty cart 
+
         const stringyDefaultCart = JSON.stringify(defaultEmptyCart);
-        // then put that empty strigified cart in local storage
+
         localStorage.setItem(CART, stringyDefaultCart);
-        //give the user a cart to play with 
-        //then, forget about local storage. just give the user a default empty cart
+
         return defaultEmptyCart;
     }
 }
+
 
 export function clearCart() {
     const stringyDefaultCart = JSON.stringify(defaultEmptyCart);
@@ -50,7 +49,7 @@ export function addToCart(id) {
 
     setCart(cart);
 }
-
+    
 export function removeFromCart(id) {
     const cart = getCart();
 
@@ -63,3 +62,16 @@ export function removeFromCart(id) {
     }
     setCart(cart);
 }
+
+export function retrieveQuantity(fruit) {
+    const cart = getCart();
+    let quantity = 0;
+    const itemInCart = findById(fruit.id, cart);
+    if (!itemInCart) {
+        return quantity;
+    } else {
+        quantity = itemInCart.quantity;
+    }
+    return quantity;
+}
+

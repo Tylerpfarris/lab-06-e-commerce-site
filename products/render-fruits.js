@@ -1,5 +1,6 @@
 
-import { addToCart, removeFromCart } from '../cart/cart-utils.js';
+import { addToCart, removeFromCart, retrieveQuantity } from '../cart/cart-utils.js';
+
 export function renderFruit(fruit) {
     
     
@@ -46,28 +47,36 @@ export function renderFruit(fruit) {
     buttonSubtractFromCart.id = 1;
     buttonSubtractFromCart.textContent = '🗑️';
 
-    const quantityBox = document.createElement('label');
+    const quantityBox = document.createElement('span');
     li.append(quantityBox);
+    
+    quantityBox.textContent = retrieveQuantity(fruit);
+
+    // console.log(typeof(quantityBox));
+
+    buttonSubtractFromCart.disabled = true;
 
     buttonCart.addEventListener('click', () => {
+        
         addToCart(fruit.id);
         localStorage.setItem('quantity', quantityBox.textContent++);
         buttonSubtractFromCart.disabled = false;
+
+        
     });
     
-    buttonSubtractFromCart.disabled = true;
+    buttonSubtractFromCart.disabled = false;
     buttonSubtractFromCart.addEventListener('click', () => {
         removeFromCart(fruit.id);
         if (quantityBox.textContent === '0'){ 
             buttonSubtractFromCart.disabled = true;
-        } else { --quantityBox.textContent;
+        } else { 
+            quantityBox.textContent--;
+            
         }
     });
         
     li.append(buttonCart);
     li.append(buttonSubtractFromCart);
     return li;
-  
-    
-    
 }

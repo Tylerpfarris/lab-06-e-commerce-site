@@ -20,7 +20,7 @@ export function calcOrderTotal(cart, fruits) {
         let fruitPrice = findById(cartItem.id, fruits).price;
         let cartItemPrice = calcLineItem(cartItem.quantity, fruitPrice);
         total += cartItemPrice;
-    }
+        
+    }  
     return total;
-
 }
